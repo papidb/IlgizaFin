@@ -15,31 +15,21 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {palette} from './src/constants';
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
+    <View style={{flex: 1}}>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}>
-        <Text>Start</Text>
-      </ScrollView>
-    </>
+        style={styles.scrollView}></ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    backgroundColor: palette.mainBackground,
   },
 });
 
