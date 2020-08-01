@@ -29,6 +29,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.scrollView}>
+        {/* Blobs */}
         <View style={styles.blobs}>
           <View style={styles.TopRight1}>
             <TopRight1 {...{width}} />
@@ -37,13 +38,18 @@ const App = () => {
             <TopRight2 {...{width}} />
             {/* <SvgComponent /> */}
           </View>
-          <Text>Hey</Text>
           <View style={styles.BottomLeft1}>
             <BottomLeft1 {...{width}} />
           </View>
           <View style={styles.BottomLeft2}>
             <BottomLeft2 {...{width}} />
           </View>
+          {/* Content */}
+          <SafeAreaView>
+            <View>
+              <Text style={styles.header}>Finance App</Text>
+            </View>
+          </SafeAreaView>
         </View>
       </View>
     </View>
@@ -66,6 +72,12 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
     // backgroundColor: palette.mainBackground,
+  },
+  header: {
+    fontSize: 40,
+    textAlign: 'center',
+    color: palette.headerColor,
+    marginTop: 40,
   },
   blobs: {flex: 1},
   TopRight1: {
