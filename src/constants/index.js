@@ -16,4 +16,5 @@ export const palette = {
   topRight1Shadow: '#BEAEAE',
   topRight2Shadow: '#DAD0D0',
   bottomLeft1Shadow: '#D1B8B8',
+  bottomLeft2Shadow: '#947C7C',
 };

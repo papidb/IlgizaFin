@@ -29,19 +29,21 @@ const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.scrollView}>
-        <View style={styles.TopRight1}>
-          <TopRight1 {...{width}} />
-        </View>
-        <View style={styles.TopRight2}>
-          <TopRight2 {...{width}} />
-          {/* <SvgComponent /> */}
-        </View>
-        <Text>Hey</Text>
-        <View style={styles.BottomLeft1}>
-          <BottomLeft1 {...{width}} />
-        </View>
-        <View style={styles.BottomLeft1}>
-          <BottomLeft2 {...{width}} />
+        <View style={styles.blobs}>
+          <View style={styles.TopRight1}>
+            <TopRight1 {...{width}} />
+          </View>
+          <View style={styles.TopRight2}>
+            <TopRight2 {...{width}} />
+            {/* <SvgComponent /> */}
+          </View>
+          <Text>Hey</Text>
+          <View style={styles.BottomLeft1}>
+            <BottomLeft1 {...{width}} />
+          </View>
+          <View style={styles.BottomLeft2}>
+            <BottomLeft2 {...{width}} />
+          </View>
         </View>
       </View>
     </View>
@@ -65,6 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: palette.mainBackground,
   },
+  blobs: {flex: 1},
   TopRight1: {
     position: 'absolute',
     right: 0,
@@ -86,6 +89,14 @@ const styles = StyleSheet.create({
     bottom: 0,
     zIndex: -2,
     shadowColor: palette.bottomLeft1Shadow,
+    ...TOP_RIGHT_SHADOW,
+  },
+  BottomLeft2: {
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    zIndex: -2,
+    shadowColor: palette.bottomLeft2Shadow,
     ...TOP_RIGHT_SHADOW,
   },
 });
