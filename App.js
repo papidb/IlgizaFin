@@ -10,12 +10,13 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
-  Dimensions,
+  TouchableOpacity,
 } from 'react-native';
+
+import RadialGradient from 'react-native-radial-gradient';
+
 import {palette, Layout} from './src/constants';
 import TopRight1 from './src/assets/svg/TopRight1.svg';
 import TopRight2 from './src/assets/svg/TopRight2.svg';
@@ -24,6 +25,8 @@ import BottomLeft2 from './src/assets/svg/BottomLeft2.svg';
 
 const width = Layout.window.width;
 const height = Layout.window.height;
+
+const BUTTON_WIDTH = width - 2 * 30;
 
 const App = () => {
   return (
@@ -45,9 +48,21 @@ const App = () => {
             <BottomLeft2 {...{width}} />
           </View>
           {/* Content */}
-          <SafeAreaView>
+          <SafeAreaView style={{justifyContent: 'space-between', flex: 1}}>
             <View>
               <Text style={styles.header}>Finance App</Text>
+            </View>
+            <View style={{alignItems: 'center'}}>
+              <TouchableOpacity style={styles.buttonContainer}>
+                <RadialGradient
+                  style={styles.radialGradient}
+                  colors={['#FFD600', '#EF0000']}
+                  stops={[0.2, 0.7]}
+                  center={[BUTTON_WIDTH / 2, -40]}
+                  radius={200}>
+                  <Text style={{color: 'white', fontSize: 24}}>Start</Text>
+                </RadialGradient>
+              </TouchableOpacity>
             </View>
           </SafeAreaView>
         </View>
@@ -78,6 +93,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: palette.headerColor,
     marginTop: 40,
+  },
+  buttonContainer: {
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
+  radialGradient: {
+    padding: 15,
+    height: 60,
+    width: BUTTON_WIDTH,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
   },
   blobs: {flex: 1},
   TopRight1: {
