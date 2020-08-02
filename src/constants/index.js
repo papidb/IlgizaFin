@@ -7,6 +7,7 @@ export const Layout = {
   window: {
     width,
     height,
+    isSmallDevice: width < 375,
   },
 };
 
