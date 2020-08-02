@@ -34,7 +34,7 @@ const BUTTON_WIDTH = width - 2 * 30;
 export const OnBoarding = () => {
   const navigation = useNavigation();
 
-  const goToHome = useCallback(() => navigation.navigate('Home'));
+  const goToHome = useCallback(() => navigation.navigate('Home'), [navigation]);
   return (
     <View style={styles.container}>
       <View style={styles.scrollView}>
@@ -54,14 +54,14 @@ export const OnBoarding = () => {
           </View>
           <View style={styles.coverImage}>
             <Image
-              style={{flex: 1}}
+              style={styles.flex}
               width={width}
               resizeMode="stretch"
               source={require('../assets/images/Surr.png')}
             />
           </View>
           {/* Content */}
-          <SafeAreaView style={{justifyContent: 'space-between', flex: 1}}>
+          <SafeAreaView style={styles.contentContainer}>
             <View>
               <Text style={styles.header}>Finance App</Text>
             </View>
@@ -146,6 +146,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 7,
   },
+  flex: {flex: 1},
+  contentContainer: {justifyContent: 'space-between', flex: 1},
   radialGradient: {
     padding: 15,
     height: 60,

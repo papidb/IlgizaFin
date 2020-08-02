@@ -7,23 +7,11 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
 
 import Nav from './src/navigation';
 
 const App = () => {
-  return (
-    <>
-      <Nav />
-    </>
-  );
+  return <Nav />;
 };
 
 export default App;
